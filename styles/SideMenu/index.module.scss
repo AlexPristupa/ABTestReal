@@ -1,0 +1,39 @@
+.cell_difference {
+  display: flex;
+
+  &__status_marker_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__status_marker {
+    border-radius: 50%;
+    width: 15px;
+    height:15px;
+    border: 1px solid #fff;
+
+    &__red {
+      background-color: #e22347;
+    }
+    &__yellow {
+      background-color: #ffdd00;
+    }
+    &__green {
+      background-color: #7dc244;
+    }
+    &__grey {
+      background-color: #d0d0d0;
+    }
+  }
+
+  &__value {
+    margin-left: 8px;
+    word-break: keep-all;
+  }
+
+  &__currency {
+    margin-left: 8px;
+  }
+}
+
