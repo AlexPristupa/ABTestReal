@@ -2,11 +2,6 @@ import React, { useState, useEffect } from "react";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
 import { GetHistogram } from "../api/user";
 
-/* const data = [
-  { name: "Page A", uv: 400, pv: 2400, amt: 2400 },
-  { name: "Page B", uv: 600, pv: 2400, amt: 2400 },
-];*/
-
 export default function RenderLineChart() {
   debugger;
   const [data, setData] = useState([]);

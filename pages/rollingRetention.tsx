@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import { Grid } from "@material-ui/core";
 import { Button } from "@material-ui/core";
-import { TextField } from "@material-ui/core";
-import { parseTime } from "./utils";
+import parseTime from "../utils";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Layout from "./components/Layout";

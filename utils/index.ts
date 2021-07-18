@@ -1,4 +1,5 @@
-export function parseTime(
+/* @ts-ignore */
+export default function parseTime(
   time: string | number | Date,
   cFormat: string
 ): string | null {

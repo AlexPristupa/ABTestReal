@@ -6,8 +6,8 @@ import { useRouter } from "next/router";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 
-import * as user from "../modules/user";
-import { parseTime } from "../utils";
+import { getUsersAsync } from "../../modules/user"; //"../../modules/user";
+import parseTime from "../../utils";
 
 const Table = () => {
   const router = useRouter();
@@ -15,7 +15,7 @@ const Table = () => {
   const [rowData, setRowData] = useState([]);
 
   useEffect(() => {
-    user.getUsersAsync().then((rowData: any) =>
+    getUsersAsync().then((rowData: any) =>
       setRowData(
         rowData.map((item: any) => ({
           ...item,
