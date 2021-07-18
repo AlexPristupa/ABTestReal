@@ -5,7 +5,7 @@ import { Button } from "@material-ui/core";
 import { CreateUser } from "./api/user";
 import Message from "./components/Message";
 import { TextField } from "@material-ui/core";
-import { parseTime } from "./utils";
+import parseTime from "../utils";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Layout from "./components/Layout";
@@ -89,13 +89,14 @@ export default function CreateUsers() {
                     onChange={(e) => setDateRegistration(e.target.value)}
                   />
                   <TextField
-                    id="DateRegistration"
-                    label="DateRegistration"
+                    id="DateLastActivity"
+                    label="DateLastActivity"
                     type="date"
                     defaultValue={getDefaultDate}
                     InputLabelProps={{
                       shrink: true,
                     }}
+                    value={dateLastActivity}
                     onChange={(e) => setDateLastActivity(e.target.value)}
                   />
                 </Grid>
