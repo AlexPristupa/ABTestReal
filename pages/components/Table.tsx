@@ -7,6 +7,7 @@ import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 
 import * as user from "../modules/user";
+import { parseTime } from "../utils";
 
 const Table = () => {
   const router = useRouter();
@@ -14,7 +15,15 @@ const Table = () => {
   const [rowData, setRowData] = useState([]);
 
   useEffect(() => {
-    user.getUsersAsync().then((rowData: any) => setRowData(rowData));
+    user.getUsersAsync().then((rowData: any) =>
+      setRowData(
+        rowData.map((item: any) => ({
+          ...item,
+          dateRegistration: parseTime(item.dateRegistration, "{d}.{m}.{y}"),
+          dateLastActivity: parseTime(item.dateLastActivity, "{d}.{m}.{y}"),
+        }))
+      )
+    );
   }, []);
 
   function routeCreateUser() {
@@ -26,6 +35,15 @@ const Table = () => {
       <div>
         <Button variant="contained" color="primary" onClick={routeCreateUser}>
           Account create
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => {
+            router.push("/rollingRetention");
+          }}
+        >
+          Rolling Retention
         </Button>
       </div>
       <AgGridReact rowData={rowData}>

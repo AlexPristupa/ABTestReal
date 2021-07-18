@@ -89,13 +89,14 @@ export default function CreateUsers() {
                     onChange={(e) => setDateRegistration(e.target.value)}
                   />
                   <TextField
-                    id="DateRegistration"
-                    label="DateRegistration"
+                    id="DateLastActivity"
+                    label="DateLastActivity"
                     type="date"
                     defaultValue={getDefaultDate}
                     InputLabelProps={{
                       shrink: true,
                     }}
+                    value={dateLastActivity}
                     onChange={(e) => setDateLastActivity(e.target.value)}
                   />
                 </Grid>

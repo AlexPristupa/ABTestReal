@@ -26,3 +26,25 @@ export function GetUsers() {
     method: methods.get,
   });
 }
+
+/**
+ * @description RollingRetention
+ * @returns
+ */
+export function GetRollingRetention() {
+  return request({
+    url: URLs.getRollingRetention,
+    method: methods.get,
+  });
+}
+
+/**
+ * @description Histogram
+ * @returns
+ */
+export function GetHistogram() {
+  return request({
+    url: URLs.getHistogram,
+    method: methods.get,
+  });
+}

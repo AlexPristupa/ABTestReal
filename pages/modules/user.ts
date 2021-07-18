@@ -11,3 +11,25 @@ export async function getUsersAsync() {
 
   return rc || [];
 }
+
+export async function getRollingRetention() {
+  let rc;
+  const res = await service.GetRollingRetention();
+
+  if (res) {
+    rc = res;
+  }
+
+  return rc || 0;
+}
+
+export async function getHistogram() {
+  let rc;
+  const res = await service.GetRollingRetention();
+
+  if (res) {
+    rc = res;
+  }
+
+  return rc || [];
+}
