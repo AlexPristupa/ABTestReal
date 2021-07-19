@@ -6,8 +6,8 @@ import axios from "axios";
 const restApi = axios.create({
   baseURL:
     process.env.NODE_ENV === "development"
-      ? "https://localhost:5001" // 'https://api.acrtr.ru/'
-      : "http://task.acrtr.ru/",
+      ? "https://task.acrtr.ru/" // 'https://api.acrtr.ru/'
+      : "https://task.acrtr.ru/",
   // timeout: 5000
   headers: {
     "Content-Type": "application/json",
